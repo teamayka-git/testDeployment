@@ -1,6 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -23,8 +25,20 @@ SwaggerModule.setup(process.env.SWAGGER_DOC_URL, app, doc, {
   },
 });
 
+app.use(cookieParser()); //jwt read from cookie
+app.enableCors({
+  origin: '*',
+  credentials: true, //jwt response store in cookie
+});
 
-
+console.log('satarted----------------');
+app.useGlobalPipes(
+  new ValidationPipe({
+    transform: true,
+    whitelist: true, // if in body unwanted items then no need to throw bad request
+    forbidNonWhitelisted: true,
+  }),
+);
 
 
   await app.listen(process.env.PORT || 3000);
