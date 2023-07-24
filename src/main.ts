@@ -24,7 +24,7 @@ SwaggerModule.setup(process.env.SWAGGER_DOC_URL, app, doc, {
     operationsSorter: 'alpha',
   },
 });
-
+/*
 app.use(cookieParser()); //jwt read from cookie
 app.enableCors({
   origin: '*',
@@ -38,7 +38,7 @@ app.useGlobalPipes(
     whitelist: true, // if in body unwanted items then no need to throw bad request
     forbidNonWhitelisted: true,
   }),
-);
+);*/
 
 
   await app.listen(process.env.PORT || 3000);
