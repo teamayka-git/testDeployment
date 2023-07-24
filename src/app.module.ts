@@ -24,7 +24,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     signOptions: {},
   }), //jwt implement
   ConfigModule.forRoot({ isGlobal: true }),
-  MongooseModule.forRoot(process.env.DB_GULL_URL),
+  MongooseModule.forRoot(process.env.DB_GULL_URL),    
   // MongooseModule.forFeature([
     
   //   // { name: ModelNames.ROOT_CAUSES, schema: RootCausesSchema },
