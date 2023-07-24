@@ -1,15 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+/*
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { JwtModule } from '@nestjs/jwt';
 
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { join } from 'path';
-import { GlobalConfig } from 'config/global_config';
+import { GlobalConfig } from 'config/global_config';*/
 
-@Module({  imports: [
+@Module({ 
+  
+  /*
+  imports: [
   ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..', 'public'),
   }),
@@ -28,6 +32,9 @@ import { GlobalConfig } from 'config/global_config';
   
   // SalesReturnRequestStatusesModule,
 ],
+*/
+
+imports: [],
   controllers: [AppController],
   providers: [AppService],
 })
