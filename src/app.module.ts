@@ -5,11 +5,11 @@ import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module
 import { join } from 'path';
 import { JwtModule } from '@nestjs/jwt';
 import { GlobalConfig } from './config/global_config';
+import { ConfigModule } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
 
 /*
 
-import { ConfigModule } from '@nestjs/config';
-import { MongooseModule } from '@nestjs/mongoose';
 */
 
 @Module({ 
@@ -23,8 +23,8 @@ import { MongooseModule } from '@nestjs/mongoose';
     secret: GlobalConfig().JWT_SECRET_KEY,
     signOptions: {},
   }), //jwt implement
-  // ConfigModule.forRoot({ isGlobal: true }),
-  // MongooseModule.forRoot(process.env.DB_GULL_URL),
+  ConfigModule.forRoot({ isGlobal: true }),
+  MongooseModule.forRoot(process.env.DB_GULL_URL),
   // MongooseModule.forFeature([
     
   //   // { name: ModelNames.ROOT_CAUSES, schema: RootCausesSchema },
