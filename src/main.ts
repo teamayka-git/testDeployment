@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ValidationPipe } from '@nestjs/common';
-import * as cookieParser from 'cookie-parser';
+// import { ValidationPipe } from '@nestjs/common';
+// import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -18,7 +18,7 @@ async function bootstrap() {
   .setVersion('1.0')
   .build();
 const doc = SwaggerModule.createDocument(app, swaggerConfig);
-SwaggerModule.setup(process.env.SWAGGER_DOC_URL, app, doc, {
+SwaggerModule.setup("swagger", app, doc, {
   swaggerOptions: {
     tagsSorter: 'alpha',
     operationsSorter: 'alpha',
