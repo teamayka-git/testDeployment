@@ -12,7 +12,7 @@ export class TestAaaService {
     @InjectModel(ModelNames.STATES) private readonly statesModel: Model<States>,
     @InjectConnection() private readonly connection: mongoose.Connection,
   ) {}
-  async list(dto: StatesListDto) {
+  async stateList(dto: StatesListDto) {
     var dateTime = new Date().getTime();
     const transactionSession = await this.connection.startSession();
     transactionSession.startTransaction();

@@ -4,13 +4,13 @@ import { ApiTags } from '@nestjs/swagger';
 import { StatesListDto } from './states.dto';
 
 
-@ApiTags("State Docs") 
+@ApiTags("Common Docs") 
 @Controller('test-aaa')
 export class TestAaaController {
   constructor(private readonly testAaaService: TestAaaService) {}
 
-  @Post("list")
-  list(@Body() dto:StatesListDto) {
-    return this.testAaaService.list(dto);
+  @Post("stateList")
+  stateList(@Body() dto:StatesListDto) {
+    return this.testAaaService.stateList(dto);
   }
 }
