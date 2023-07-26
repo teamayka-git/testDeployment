@@ -11,16 +11,16 @@ export class AppController {
   }
   
 
-  // @Post('testParallelLog')
-  // testParallelLog() {
-  //   return this.appService.testParallelLog();
-  // }
+  @Post('testParallelLog')
+  testParallelLog() {
+    return this.appService.testParallelLog();
+  }
 
 
-  // @Post('testParallelBulk')
-  // testParallelBulk() {
-  //   return this.appService.testParallelBulk();
-  // }
+  @Post('testParallelBulk')
+  testParallelBulk() {
+    return this.appService.testParallelBulk();
+  }
 
 
 }
