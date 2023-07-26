@@ -4,7 +4,8 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
   getHello(): string {
     return 'Hello Worldd!';
-  } async testParallelLog() {
+  } 
+ /* async testParallelLog() {
 
 
     console.log("testParallelLog start");
@@ -57,5 +58,5 @@ export class AppService {
         } catch (error) {
             throw error;
         }
-      }
+      }*/
 }
