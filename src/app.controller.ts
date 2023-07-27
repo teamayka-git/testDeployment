@@ -22,5 +22,11 @@ export class AppController {
     return this.appService.testParallelBulk();
   }
 
+  
+  @Post('getCpuCount')
+  getCpuCount() {
+    return this.appService.getCpuCount();
+  }
+
 
 }

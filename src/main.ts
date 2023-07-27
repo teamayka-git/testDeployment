@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
+import { ClusterService } from './cluster.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -44,5 +45,6 @@ app.useGlobalPipes(
 
   await app.listen(process.env.PORT || 3000);
 }
-bootstrap();
+// bootstrap();
+ClusterService.clusterize(bootstrap);
   
