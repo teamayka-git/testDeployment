@@ -8,6 +8,7 @@ import { GlobalConfig } from './config/global_config';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TestAaaModule } from './test_aaa/test_aaa.module';
+import { OrderSalesModule } from './modules/order-sales/order-sales.module';
 
 /*
 
@@ -26,7 +27,8 @@ import { TestAaaModule } from './test_aaa/test_aaa.module';
   }), //jwt implement
   ConfigModule.forRoot({ isGlobal: true }),
   MongooseModule.forRoot(process.env.DB_GULL_URL),
-  TestAaaModule,    
+  TestAaaModule,
+  OrderSalesModule,    
   // MongooseModule.forFeature([
     
   //   // { name: ModelNames.ROOT_CAUSES, schema: RootCausesSchema },
