@@ -45,6 +45,6 @@ app.useGlobalPipes(
 
   await app.listen(process.env.PORT || 3000);
 }
-// bootstrap();
-ClusterService.clusterize(bootstrap);
+bootstrap();
+// ClusterService.clusterize(bootstrap);
   
